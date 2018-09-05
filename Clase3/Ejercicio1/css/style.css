@@ -1,0 +1,8 @@
+h1 {background-color:rgb(39, 110, 143)} 
+#myDiv {background-color: blue; padding: 10px}
+.myClass {background-color: green}
+body { 
+    background:url("../img/descarga.jpg")
+    no-repeat
+    
+}

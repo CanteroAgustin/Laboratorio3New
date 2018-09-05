@@ -1,0 +1,25 @@
+div{
+    border: green 2px solid;
+    overflow: auto;
+
+}
+img{
+    float: left;
+    width: 100px;
+    margin: 5px;
+}
+p{
+    clear: left;
+}
+
+.transicion{
+    width: 100px;
+    height: 100px;
+    background-color: mediumslateblue;
+    transition: width 1s,height 1s,background-color 1s;
+}
+.transicion:hover{
+    width: 300px;
+    height: 400px;
+    background-color: tomato;
+}
