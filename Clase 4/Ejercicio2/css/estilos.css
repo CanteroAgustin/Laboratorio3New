@@ -1,0 +1,12 @@
+.tablaPersonas{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.tablaPersonas td{
+    border: 1px solid black;
+}
+
+.tablaPersonas tr{
+    border: 1px solid black;
+}
