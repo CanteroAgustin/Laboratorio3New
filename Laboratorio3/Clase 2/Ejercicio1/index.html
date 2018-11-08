@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="pagina2.php" method="post">
+        Ingrese nombre:
+        <input type="text" name="nombre" size="30" value="">
+        <br/>
+        <br/>
+        <textarea name="txtArea" id="txtArea" cols="30" rows="10" placeholder="Escriba sus comentarios aqui..."></textarea>
+        <br/>
+        <br/>
+        <h3>Seleccione poderes</h3>
+        <input type="checkbox" name="vuela" id="vuela">Vuela
+        <br>
+        <input type="checkbox" name="fuerza" id="fuerza">Fuerza
+        <br>
+        <input type="checkbox" name="invisible" id="invisible">Invisible
+        <br>
+        <br>
+        <h2>Editorial</h2>
+        <input type="radio" name="editorial" id="e1" value="DC Comics">DC Comics
+        <input type="radio" name="editorial" id="e2" value="Marvel">Marvel
+        <br/>
+        <br>
+        <h2>Seleccione heeroe</h2>
+        <select name="heroe" id="">
+            <optgroup label="Marvel">
+                <option value="0">Bruja Escarlata</option>
+                <option value="1">Spiderman</option>
+                <option value="2">Thor</option>
+                <option value="3">Hulk</option>
+                <option value="4">Ironman</option>
+            </optgroup>
+            <optgroup label="DC Comics">
+                <option value="3">Superman</option>
+                <option value="2">Batman</option>
+                <option value="4">Flash</option>
+                <option value="1">Mujer Maravilla</option>
+                <option value="0">Aquaman</option>
+            </optgroup>
+        </select>
+        <br>
+        <br>
+        <input type="button" value="Comentar">
+        <button><img src="enviar.jpg" alt="enviar" style="width: 20px"></button>
+        <br><br>
+        <input type="file" name="" id="">
+        <br><br>
+        <fieldset style="width: 25%">
+            <legend>Datos Personales</legend>
+            <label for="">Nombre</label>
+            <input type="text" style="padding-left: 100px"><br>
+            <label for="">Apellido</label>
+            <input type="text" style="padding-left: 100px"><br>
+            <label for="">Edad</label>
+            <input type="text" style="padding-left: 109px"><br>
+            <label for="">Telefono</label>
+            <input type="text" style="padding-left: 100px"><br>
+            <label for="">Direccion</label>
+            <input type="text" style="padding-left: 100px"><br>
+        </fieldset>
+        <br>
+        <input type="email" name="" id="">
+        <input type="password" name="" id="">
+        <input type="datetime" name="" id="">
+        <input type="range" name="" id="">
+        <br><br>
+        <input type="submit">
+    </form>
+</body>
+
+</html>
