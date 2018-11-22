@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="js/funciones.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+
+    <title>TP Final Lab 3 2018</title>
+</head>
+
+<body>
+    <h1 class="p-3 mb-2 text-center bg-info"> Administracion de Empleados. </h1>
+
+    <form action="#" onsubmit="agregarEmpleado()" id="frmAgregarEmpleado" class="form-row bg-light">
+        <legend class="scheduler-border">Agregar Empleado:</legend>
+        <div class="form-group mx-sm-3 mb-2">
+            <input id="idAdd" type="hidden" class="form-control">
+        </div>
+        <div class="form-group mx-sm-3 mb-2 ">
+            <label for="nombreAdd">Nombre:</label>
+            <input id="nombreAdd" type="text" class="form-control" required>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="apellidoAdd">Apellido:</label>
+            <input id="apellidoAdd" type="text" class="form-control" required>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="puestoAdd">Puesto:</label>
+            <input id="puestoAdd" type="text" class="form-control" required>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="suspendidoAdd">Suspendido</label>
+            <input id="suspendidoAdd" type="text" class="form-control" required>
+        </div>
+        <button type="submit" id="btnAgregar" class="align-self-center">
+            <i class="far fa-check-circle fa-3x"></i>
+        </button>
+    </form>
+
+    <form id="frmEditarEmpleado" action="#" onsubmit="editarEmpleado()" class="form-row bg-light">
+        <legend class="scheduler-border">Editar Empleado:</legend>
+
+        <div class="form-group mx-sm-3 mb-2">
+            <input id="id" name="id" type="hidden" class="form-control" required>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="nombre">Nombre:</label>
+            <input id="nombre" type="text" class="form-control" required>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="apellido">Apellido:</label>
+            <input id="apellido" type="text" class="form-control" required>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="puesto">Puesto:</label>
+            <input id="puesto" type="text" class="form-control" required>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="suspendido">Suspendido</label>
+            <input id="suspendido" type="text" class="form-control" required>
+        </div>
+        <button type="submit" class="align-self-center">
+            <i class='far fa-check-circle fa-3x'></i>
+        </button>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Puesto</th>
+                <th scope="col">Suspendido</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">
+                    <button id="btnAdd" class="btnAdd" onclick="mostrarAgregar()" title="Agregar Empleado">
+                        <i class="fas fa-user-plus fa-2x"></i>
+                    </button>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>

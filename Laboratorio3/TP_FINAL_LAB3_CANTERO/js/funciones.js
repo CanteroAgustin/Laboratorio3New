@@ -1,18 +1,17 @@
 $(document).ready(function (){
-    window.localStorage.setItem("token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NDE1NDkwODUsImV4cCI6MTU0MTU1MjY4NSwiYXVkIjoiODQ2ZmY3MzU5NTMwZTBjNjY2YmRiMTQwYzNmYWVlMmQwZDNkMDMwMSIsImRhdGEiOnsidXN1YXJpbyI6bnVsbCwicHVlc3RvIjpudWxsfSwiYXBwIjoiQVBJIFJFU1QgQ0QgMjAxNyJ9.nViSyw_GJef5BlEowooWUxK3C67eiXbKzh8sR33pX6M");
+    
     $("#frmEditarEmpleado").hide();
     $("#frmAgregarEmpleado").hide();
     
     cargarTabla();
 });
 
- var url = 'http://agustincantero.com/UtnFRA/Programacion3/TP_FINAL_PROG3_CANTERO/empleados/';
+ var url = 'http://agustincantero.com/UtnFRA/Programacion3/TP_FINAL_PROG3_CANTERO/empleados';
 function cargarTabla(){
-    console.log(localStorage.getItem('token'));
     $.ajax({
         url: url,
-        headers: {"Authorization": localStorage.getItem('token')},
         type: 'GET',
+        headers: {"token": localStorage.getItem('token')},
         success: function (result) {
             $('tbody').html("");
             result.forEach(function(empleado) {
@@ -36,7 +35,7 @@ function nuevoEmpleado(){
 function borrarEmpleado(id){
     $.ajax({
         url: url,
-        headers: {"Authorization": localStorage.getItem('token')},
+        headers: {"token": localStorage.getItem('token')},
         type: 'DELETE',
         data: {id:id},
         success: function (result) {
@@ -72,12 +71,14 @@ function editarEmpleado(){
     var apellido = $('#apellido').val();
     var puesto = $('#puesto').val();
     var suspendido = $('#suspendido').val();
+    var puesto = $('#email').val();
+    var suspendido = $('#password').val();
 
     $.ajax({
         url: url,
-        headers: {"Authorization": localStorage.getItem('token')},
+        headers: {"token": localStorage.getItem('token')},
         type: 'PUT',
-        data: {id:id,nombre:nombre,apellido:apellido,puesto:puesto,suspendido:suspendido},
+        data: {id:id,nombre:nombre,apellido:apellido,puesto:puesto,suspendido:suspendido,email:email,password:password},
         success: function (result) {
             cargarTabla();
         }
@@ -92,17 +93,21 @@ function agregarEmpleado(){
     var apellido = $('#apellidoAdd').val();
     var puesto = $('#puestoAdd').val();
     var suspendido = $('#suspendidoAdd').val();
+    var email = $('#emailAdd').val();
+      var password = $('#passwordAdd').val();
     var formData = {
             'nombre':nombre,
             'apellido':apellido,
             'puesto': puesto,
-            'suspendido': suspendido
+            'suspendido': suspendido,
+            'email': email,
+            'password': password
         };
 
     $.ajax({
         url: url,
         type: 'POST',
-        headers: {"Authorization": localStorage.getItem('token')},
+        headers: {"token": localStorage.getItem('token')},
         data: formData,
         success: function (result) {
             cargarTabla();
